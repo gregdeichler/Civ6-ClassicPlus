@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_GOLDEN_AGE_QUESTS_DESCRIPTION" Language="en_US">
+      <Text>+50% [ICON_Production] Production toward walls.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_TSIKHE_DESCRIPTION_XP2" Language="en_US">
+      <Text>Replaces Renaissance Walls. Provides +6 [ICON_Faith] Faith and an additional +1 [ICON_Tourism] Tourism after Conservation.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_LAUTARO_ABILITY_DESCRIPTION_ALT" Language="en_US">
+      <Text>+10 [ICON_Strength] Combat Strength against Free Cities. Defeating an enemy unit within an enemy city's borders causes that city to lose Loyalty.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_TOQUI_COMBAT_BONUS_VS_GOLDEN_AGE_CIV_DESCRIPTION" Language="en_US">
+      <Text>+{1_Amount} Combat Strength against Free Cities</Text>
+    </Replace>
+    <Replace Tag="LOC_ABILITY_TOQUI_COMBAT_BUFF_VS_GOLDEN_AGE_DESCRIPTION" Language="en_US">
+      <Text>+{1_Amount} Combat Strength against Free Cities</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_SAHEL_MERCHANTS_DESCRIPTION" Language="en_US">
+      <Text>International [ICON_TradeRoute] Trade Routes gain +1 [ICON_Gold] Gold per flat Desert tile in the origin city. +1 [ICON_TradeRoute] Trade Route capacity upon researching Political Philosophy.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_SULEIMAN_ALT_DESCRIPTION" Language="en_US">
+      <Text>+5% [ICON_Science] Science and [ICON_Culture] Culture in all cities. Units gain +2 [ICON_Strength] Combat Strength.</Text>
+    </Replace>
+    <Replace Tag="LOC_ABILITY_SULEIMAN_COMBAT_DESCRIPTION" Language="en_US">
+      <Text>+{1_Amount} Combat Strength from Magnificent Suleiman</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION" Language="en_US">
+      <Text>Factories provide +1 [ICON_GreatEngineer] Great Engineer point and Universities provide +1 [ICON_GreatScientist] Great Scientist point per turn.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_FACES_OF_PEACE_DESCRIPTION" Language="en_US">
+      <Text>Canada cannot declare Surprise Wars or declare war on city-states, and cannot be targeted by Surprise Wars. [ICON_TradeRoute] Trade Routes to city-states grant +2 [ICON_Culture] Culture.</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>Diplomatic policy slots in the current government are converted to Wildcard slots. +1 Influence Point per turn.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_ORSZAGHAZ_DESCRIPTION" Language="en_US">
+      <Text>+3 Influence Points per turn. Must be built along a river.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_PAGODA_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>+1 Influence Point per turn.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION" Language="en_US">
+      <Text>50% discount on levying city-state units. +4 [ICON_Strength] Combat Strength for levied units. +2 Influence Points per turn. Awards a Governor Title.</Text>
+    </Replace>
+    <Replace Tag="LOC_BUILDING_TAJ_MAHAL_DESCRIPTION" Language="en_US">
+      <Text>+4 [ICON_Culture] Culture. Must be built along a river.</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="690c1008-ec7d-4890-846c-f3a23c645dd5" version="1">
+  <Properties>
+    <Name>Classic+</Name>
+    <Description>M1 preview for Gathering Storm: ordinary eras without ages, and diplomacy without World Congress.</Description>
+    <Authors>Classic+ contributors</Authors>
+    <CompatibleVersions>2.0</CompatibleVersions>
+    <AffectsSavedGames>1</AffectsSavedGames>
+  </Properties>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm"/>
+  </Dependencies>
+  <ActionCriteria>
+    <Criteria id="ClassicPlusGatheringStorm">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <!-- The domain guard lets setup apply this before a ruleset is selected. -->
+    <UpdateDatabase id="ClassicPlusSetup">
+      <Properties><LoadOrder>1000</LoadOrder></Properties>
+      <File>Configuration/GatheringStorm.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ClassicPlusSetupText">
+      <Criteria>ClassicPlusGatheringStorm</Criteria>
+      <Properties><LoadOrder>1000</LoadOrder></Properties>
+      <File>Localization/en_US.xml</File>
+    </UpdateText>
+  </FrontEndActions>
+  <InGameActions>
+    <UpdateDatabase id="ClassicPlusAges">
+      <Criteria>ClassicPlusGatheringStorm</Criteria>
+      <Properties><LoadOrder>1000</LoadOrder></Properties>
+      <File>Gameplay/Ages/Disable.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ClassicPlusCongress">
+      <Criteria>ClassicPlusGatheringStorm</Criteria>
+      <Properties><LoadOrder>1001</LoadOrder></Properties>
+      <File>Gameplay/WorldCongress/Disable.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ClassicPlusLeaderCompatibility">
+      <Criteria>ClassicPlusGatheringStorm</Criteria>
+      <Properties><LoadOrder>1002</LoadOrder></Properties>
+      <File>Gameplay/LeaderCompatibility/Abilities.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ClassicPlusGameplayText">
+      <Criteria>ClassicPlusGatheringStorm</Criteria>
+      <Properties><LoadOrder>1000</LoadOrder></Properties>
+      <File>Localization/en_US.xml</File>
+    </UpdateText>
+    <ReplaceUIScript id="ClassicPlusActionPanel" criteria="ClassicPlusGatheringStorm">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>ActionPanel</LuaContext>
+        <LuaReplace>UI/ClassicPlusActionPanel.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="ClassicPlusPartialScreenHooks" criteria="ClassicPlusGatheringStorm">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>PartialScreenHooks</LuaContext>
+        <LuaReplace>UI/ClassicPlusPartialScreenHooks.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+  </InGameActions>
+  <Files>
+    <File>Configuration/GatheringStorm.sql</File>
+    <File>Gameplay/Ages/Disable.sql</File>
+    <File>Gameplay/WorldCongress/Disable.sql</File>
+    <File>Gameplay/LeaderCompatibility/Abilities.sql</File>
+    <File>Localization/en_US.xml</File>
+    <File>UI/ClassicPlusActionPanel.lua</File>
+    <File>UI/ClassicPlusPartialScreenHooks.lua</File>
+  </Files>
+</Mod>
