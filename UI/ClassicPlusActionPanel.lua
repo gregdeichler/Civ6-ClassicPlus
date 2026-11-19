@@ -5,6 +5,8 @@ local refresh = OnRefresh
 function OnRefresh()
     refresh()
     if not HasCapability("CAPABILITY_GOLDEN_AND_DARK_AGES") then
-        Controls.AgeScoreContainer:SetHide(true)
-    end
+        if Controls.AgeScoreContainer then
+              Controls.AgeScoreContainer:SetHide(true)
+        end
+        end
 end
