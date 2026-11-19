@@ -49,6 +49,9 @@ WHERE Name = 'Amount' AND ModifierId IN (
 -- the Consulate. Hungary's wonder keeps a diplomatic benefit for its owner.
 UPDATE Modifiers SET ModifierType = 'MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN'
 WHERE ModifierId IN ('GOVCITYSTATES_ADJUST_FAVOR', 'PAGODA_ADJUST_FAVOR', 'ORSZAGHAZ_DOUBLE_FAVOR_SUZERAIN');
+DELETE FROM ModifierArguments WHERE ModifierId = 'ORSZAGHAZ_DOUBLE_FAVOR_SUZERAIN';
+INSERT INTO ModifierArguments (ModifierId, Name, Value)
+   SELECT ModifierId, 'Amount', '3' FROM Modifiers WHERE ModifierId = 'ORSZAGHAZ_DOUBLE_FAVOR_SUZERAIN';
 
 UPDATE ModifierArguments SET Value = CASE ModifierId
     WHEN 'GOVCITYSTATES_ADJUST_FAVOR' THEN '2'
