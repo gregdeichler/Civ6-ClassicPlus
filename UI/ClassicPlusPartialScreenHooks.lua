@@ -1,5 +1,5 @@
 -- The stock hook checks CAPABILITY_ERAS alone. Keep eras and gate the age screen.
-include("PartialScreenHooks_Expansion2")
+include("PartialScreenHooks_Expansion2.lua")
 
 local addEraHook = AddEraHook
 function AddEraHook()
