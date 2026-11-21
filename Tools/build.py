@@ -17,11 +17,18 @@ def manifest():
     references.update(f.text for f in mod.findall('./InGameActions//LuaReplace'))
     assert set(paths) == references, 'Manifest file declarations and action references differ'
     criteria = {node.get('id') for node in mod.findall('./ActionCriteria/Criteria')}
+    gathering_storm = mod.find('./ActionCriteria/Criteria[@id="ClassicPlusGatheringStorm"]')
+    assert gathering_storm is not None and len(gathering_storm) == 1
+    assert gathering_storm[0].tag == 'GameCoreInUse' and gathering_storm[0].text == 'Expansion2', \
+        'Use the engine-supported Gathering Storm game-core criterion'
     actions = list(mod.find('FrontEndActions')) + list(mod.find('InGameActions'))
     assert len({a.get('id') for a in actions}) == len(actions)
     for action in actions:
-        criterion = action.get('criteria') or action.findtext('Criteria')
+        criterion = action.get('criteria')
+        assert action.find('Criteria') is None, 'Use the criteria attribute on actions'
         assert criterion is None or criterion in criteria, criterion
+        if action.get('id') != 'ClassicPlusSetup':
+            assert criterion == 'ClassicPlusGatheringStorm', action.get('id')
     for path in paths:
         parts = PurePosixPath(path).parts
         assert not PurePosixPath(path).is_absolute() and '..' not in parts
@@ -33,7 +40,7 @@ def manifest():
 
 def package():
     _, paths = manifest()
-    out = ROOT / 'dist' / 'ClassicPlus-0.1.0-preview.zip'
+    out = ROOT / 'dist' / 'ClassicPlus-0.2.0-preview.zip'
     out.parent.mkdir(exist_ok=True)
     with ZipFile(out, 'w', compression=ZIP_DEFLATED) as archive:
         for path in sorted([MANIFEST, *paths]):

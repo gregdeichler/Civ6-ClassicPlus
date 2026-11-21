@@ -22,11 +22,24 @@ DELETE FROM RequirementSetRequirements
 WHERE RequirementSetId = 'OPPONENT_IS_IN_GOLDEN_AGE_FREE_CITY_REQUIREMENTS'
   AND RequirementId = 'OPPONENT_IS_IN_GOLDEN_AGE_REQUIREMENT';
 
--- Mansa Musa gains one route at Political Philosophy, using the existing
--- Persian unlock condition. His desert trade yields stay in place.
+-- Mansa Musa gains one route at Political Philosophy. Define our own condition:
+-- the stock PLAYER_HAS_POLITICAL_PHILOSOPHY set requires the optional Persia DLC.
+-- His desert trade yields stay in place.
+INSERT INTO RequirementSets (RequirementSetId, RequirementSetType)
+VALUES ('CLASSICPLUS_PLAYER_HAS_POLITICAL_PHILOSOPHY', 'REQUIREMENTSET_TEST_ALL');
+
+INSERT INTO Requirements (RequirementId, RequirementType)
+VALUES ('CLASSICPLUS_REQUIRES_POLITICAL_PHILOSOPHY', 'REQUIREMENT_PLAYER_HAS_CIVIC');
+
+INSERT INTO RequirementArguments (RequirementId, Name, Value)
+VALUES ('CLASSICPLUS_REQUIRES_POLITICAL_PHILOSOPHY', 'CivicType', 'CIVIC_POLITICAL_PHILOSOPHY');
+
+INSERT INTO RequirementSetRequirements (RequirementSetId, RequirementId)
+VALUES ('CLASSICPLUS_PLAYER_HAS_POLITICAL_PHILOSOPHY', 'CLASSICPLUS_REQUIRES_POLITICAL_PHILOSOPHY');
+
 UPDATE Modifiers
 SET ModifierType = 'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',
-    SubjectRequirementSetId = 'PLAYER_HAS_POLITICAL_PHILOSOPHY'
+    SubjectRequirementSetId = 'CLASSICPLUS_PLAYER_HAS_POLITICAL_PHILOSOPHY'
 WHERE ModifierId = 'GOLDEN_AGE_TRADE_ROUTE';
 
 -- Magnificent Suleiman gets smaller steady bonuses in place of the age cycle.
