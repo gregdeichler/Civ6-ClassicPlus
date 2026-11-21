@@ -1,6 +1,6 @@
 # Classic+ contributor instructions
 
-Keep the Gathering Storm roster and unique content while removing the six systems in the roadmap. Preserve loyalty, ordinary eras and diplomacy, disasters, and non-diplomatic victories. Existing DLC ownership and asset loading stay with the game; never bundle Firaxis files or edit the game installation.
+Keep the Gathering Storm roster and unique content while removing the systems in the roadmap. Preserve loyalty, ordinary eras, ordinary diplomacy, non-flood disasters, and non-diplomatic victories. The user's 2026-11-21 scope adds grievance neutralization and removal of river and coastal flooding. Existing DLC ownership and asset loading stay with the game; never bundle Firaxis files or edit the game installation.
 
 Keep frontend configuration, gameplay SQL, UI wrappers, and localization separate. Prefer targeted row updates and existing engine effects. Add Lua only where data cannot control the behavior. Use the Gathering Storm action criterion for ruleset-specific code, stable mod and action IDs, and explicit load order. Keep stock records that the engine or another retained system may reference. Use the [architecture notes](docs/architecture.md) for sources and [known limitations](docs/known-limitations.md) for engine assumptions.
 
